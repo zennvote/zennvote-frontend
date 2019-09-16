@@ -1,9 +1,9 @@
-import VoteData from './VoteData';
-import VoteDataWrapper from './VoteDataWrapper';
-import Vote from './Vote';
+import NarrativeVote from './NarrativeVote';
+import SelectVote from './SelectVote';
+import SeasonVote from './SeasonVote';
 
 export{
-    VoteData,
-    VoteDataWrapper,
-    Vote
+    NarrativeVote,
+    SelectVote,
+    SeasonVote
 };

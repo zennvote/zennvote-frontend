@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import {VoteDataContainer} from '../containers';
+import VoteRenderer from '../containers/VoteRenderer';
 
 class Vote extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  };
-    }
     render() {
         return (
-            <VoteDataContainer/>
+            <VoteRenderer/>
         );
     }
 }

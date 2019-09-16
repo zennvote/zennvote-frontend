@@ -1,5 +1,5 @@
 import Vote from './Vote';
 
-export{
-    Vote
-};
+export {
+    Vote,
+}

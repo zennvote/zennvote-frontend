@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Vote} from './Routes';
-
+import { Vote } from './Routes';
 import './App.css';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -11,6 +10,7 @@ const { SubMenu } = Menu;
 class App extends Component {
   state = {
     collapsed: false,
+    isLogin: false
   };
 
   onCollapse = collapsed => {
@@ -38,12 +38,14 @@ class App extends Component {
                 title={
                   <span>
                     <Icon type="user" />
-                    <span>User</span>
+                    <span>{!this.state.isLogin ? '로그인' : '마이페이지'}</span>
                   </span>
                 }
               >
-                <Menu.Item key="3">투표 기록</Menu.Item>
-                <Menu.Item key="4">중복 방지</Menu.Item>
+                <Menu.Item key="3">
+                  투표 조회
+                  {!this.state.isLogin ? <Link to="/login" /> : <Link to="/vote/user" />}
+                </Menu.Item>
               </SubMenu>
               <SubMenu
                 key="sub2"
@@ -66,9 +68,11 @@ class App extends Component {
                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
               </Breadcrumb>
               <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-              <Switch>
-                <Route exact path="/vote" component={Vote} />
-              </Switch>
+                <Switch>
+                  <Route exact path="/vote" component={Vote} />
+                  {/* <Route exact path="/login" component={Login} />
+                  <Route exact path="/vote/user" component={User} /> */}
+                </Switch>
               </div>
             </Content>
             <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
