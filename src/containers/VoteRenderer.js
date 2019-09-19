@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SelectVote, SeasonVote, NarrativeVote } from '../components';
+import { SelectVote, EpisodeVote, NarrativeVote } from '../components';
 
 class VoteRenderer extends Component {
     constructor(props) {
@@ -11,13 +11,17 @@ class VoteRenderer extends Component {
         return (
             <div>
                 <div>
+                    <label>회차투표</label>
+                    <EpisodeVote />
+                </div>
+                <div>
                     <label>유닛 상 투표</label>
                     <SelectVote voteType="unit" />
                 </div>
                 <br />
                 <div>
                     <label>신인 상 투표</label>
-                    <SelectVote voteType="new"  />
+                    <SelectVote voteType="new" />
                 </div>
                 <br />
                 <div>
@@ -25,10 +29,7 @@ class VoteRenderer extends Component {
                     <SelectVote voteType="grow" />
                 </div>
                 <br />
-                {/* <div>
-                    <label>회차투표</label>
-                    <SeasonVote />
-                </div> */}
+
 
             </div>
         );

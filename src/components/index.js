@@ -1,9 +1,11 @@
 import NarrativeVote from './NarrativeVote';
 import SelectVote from './SelectVote';
-import SeasonVote from './SeasonVote';
+import EpisodeVote from './EpisodeVote';
+import CreateNewInput from './CreateNewIInput';
 
 export{
     NarrativeVote,
     SelectVote,
-    SeasonVote
+    EpisodeVote,
+    CreateNewInput,
 };
